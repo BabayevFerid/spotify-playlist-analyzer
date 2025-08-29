@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Spotify Playlist Analyzer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Spotify Playlist Analyzer</h1>
+      <div id="auth-area">
+        <button id="loginBtn">Connect with Spotify</button>
+        <button id="logoutBtn" class="hidden">Logout</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="user-area" class="card hidden">
+        <div id="user-info"></div>
+        <div>
+          <label for="playlists">Your Playlists:</label>
+          <select id="playlists"></select>
+          <button id="analyzeBtn">Analyze Playlist</button>
+        </div>
+      </section>
+
+      <section id="result-area" class="card hidden">
+        <div id="playlist-header"></div>
+
+        <div class="stats-grid">
+          <div>Tracks: <span id="stat-tracks">0</span></div>
+          <div>Duration: <span id="stat-duration">0</span></div>
+          <div>Analyzed tracks (features): <span id="stat-features">0</span></div>
+        </div>
+
+        <h3>Average Audio Features</h3>
+        <canvas id="featuresChart" width="400" height="200"></canvas>
+
+        <h3>Top Artists</h3>
+        <ol id="topArtists"></ol>
+
+        <h3>Top Tracks</h3>
+        <ol id="topTracks"></ol>
+
+        <h3>Top Genres</h3>
+        <ul id="topGenres"></ul>
+      </section>
+    </main>
+
+    <footer>
+      <small>Built for demo • uses Spotify Web API • MIT License</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
